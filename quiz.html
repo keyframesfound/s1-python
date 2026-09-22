@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Final quiz · S1 Python</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Sora:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <strong>S1 Python</strong>
+        <span>St Stephen's College ICT</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html"><span class="en">Home</span><span class="zh">主頁</span></a>
+        <a href="quiz.html"><span class="en">Final quiz</span><span class="zh">期末測驗</span></a>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-btn" data-lang="zh" aria-pressed="false">中</button>
+      </nav>
+    </div>
+  </header>
+  <main>
+
+<section class="hero">
+  <h1><span class="en">Final exam-style quiz</span><span class="zh">期末考試形式測驗</span></h1>
+  <p class="en">12 multiple-choice questions covering lessons 1–10. Choose the best answer, then grade yourself.</p>
+  <p class="zh">12 道選擇題，涵蓋第 1–10 課。選出最佳答案後自行評分。</p>
+</section>
+<section class="panel">
+  <div id="quiz-root"></div>
+  <div class="toolbar" style="margin-top:1rem">
+    <button type="button" class="btn btn-primary" id="grade-quiz">
+      <span class="en">Grade quiz</span><span class="zh">評分</span>
+    </button>
+    <a class="btn" href="index.html"><span class="en">Back to home</span><span class="zh">返回主頁</span></a>
+  </div>
+  <div id="quiz-result"></div>
+</section>
+
+  </main>
+  <footer class="site-footer">
+    <p class="en">S1 beginner Python · browser-based (Pyodide) · aligned to junior secondary programming concepts.</p>
+    <p class="zh">中一基礎 Python · 瀏覽器執行（Pyodide）· 對應初中程式設計概念。</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
