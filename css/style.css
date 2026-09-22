@@ -1,0 +1,262 @@
+:root {
+  --bg: #eef4f6;
+  --bg-soft: #f7fafb;
+  --ink: #132a33;
+  --muted: #4a636c;
+  --accent: #0c6b6f;
+  --accent-2: #d97706;
+  --card: #ffffff;
+  --line: #c5d4da;
+  --ok: #157a3a;
+  --bad: #b42318;
+  --shadow: 0 10px 30px rgba(19, 42, 51, 0.08);
+  --radius: 14px;
+  --font-display: "Sora", system-ui, sans-serif;
+  --font-body: "Source Sans 3", system-ui, sans-serif;
+  --font-code: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 500px at 10% -10%, #d7ecee 0%, transparent 55%),
+    radial-gradient(900px 400px at 100% 0%, #ffe8c7 0%, transparent 45%),
+    var(--bg);
+  line-height: 1.55;
+  min-height: 100vh;
+}
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: #085458; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(10px);
+  background: rgba(238, 244, 246, 0.9);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  font-family: var(--font-display);
+  text-decoration: none;
+  color: var(--ink);
+}
+.brand strong { font-size: 1.15rem; letter-spacing: -0.02em; }
+.brand span { font-size: 0.82rem; color: var(--muted); font-weight: 500; }
+
+.nav {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.nav a, .btn, .lang-btn {
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 0.4rem 0.85rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+.nav a:hover, .btn:hover, .lang-btn:hover { border-color: var(--accent); }
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover { background: #085458; color: #fff; }
+.lang-btn[aria-pressed="true"] {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+.hero {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.5rem 0 0.5rem;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+.hero p { margin: 0; color: var(--muted); font-size: 1.1rem; max-width: 55ch; }
+.cta-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.5rem; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+.lesson-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.15rem;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+.lesson-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+.lesson-card .num {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+.lesson-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin: 0.35rem 0 0.4rem;
+  letter-spacing: -0.02em;
+}
+.lesson-card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem;
+  box-shadow: var(--shadow);
+  margin: 1rem 0;
+}
+.panel h2, .panel h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  margin-top: 0;
+}
+.goals { padding-left: 1.1rem; }
+.goals li { margin: 0.35rem 0; }
+
+.zh { display: none; }
+html[lang="zh"] .en { display: none; }
+html[lang="zh"] .zh { display: revert; }
+html[lang="zh"] .zh.inline, .zh.inline { display: none; }
+html[lang="zh"] .zh.inline { display: inline; }
+html[lang="en"] .en.inline { display: inline; }
+
+.lesson-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.editor-wrap {
+  display: grid;
+  gap: 0.75rem;
+}
+@media (min-width: 900px) {
+  .editor-wrap.split { grid-template-columns: 1.2fr 0.8fr; }
+}
+textarea.code {
+  width: 100%;
+  min-height: 180px;
+  font-family: var(--font-code);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  padding: 0.9rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #0f1c22;
+  color: #e7f2f4;
+  resize: vertical;
+}
+.output {
+  font-family: var(--font-code);
+  font-size: 0.9rem;
+  background: #10242b;
+  color: #b8f0c8;
+  border-radius: 10px;
+  padding: 0.9rem;
+  min-height: 180px;
+  white-space: pre-wrap;
+  overflow: auto;
+  border: 1px solid #1d3a44;
+}
+.toolbar { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+.status {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.status.ready { color: var(--ok); }
+.status.error { color: var(--bad); }
+
+.quiz-q {
+  border-top: 1px solid var(--line);
+  padding: 1rem 0;
+}
+.quiz-q:first-child { border-top: 0; }
+.quiz-q fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.quiz-q label {
+  display: block;
+  margin: 0.4rem 0;
+  cursor: pointer;
+}
+.quiz-result {
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin-top: 1rem;
+}
+
+.site-footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem 2rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.note {
+  background: #fff7ea;
+  border: 1px solid #f0d7a8;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  color: #5c430f;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero, .panel, .lesson-card { animation: rise 0.45s ease both; }
+.lesson-card:nth-child(2) { animation-delay: 0.04s; }
+.lesson-card:nth-child(3) { animation-delay: 0.08s; }
+.lesson-card:nth-child(4) { animation-delay: 0.12s; }
