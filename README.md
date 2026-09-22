@@ -3,11 +3,11 @@
 Beginner Python course for Secondary 1: **10 lessons** + **final exam-style quiz**.
 
 - Live site (GitHub Pages): https://keyframesfound.github.io/s1-python/
-- Bilingual: English first, Chinese toggle
-- In-browser Python via [Pyodide](https://pyodide.org/) (no install)
+- English first (Chinese toggle available)
+- In-browser Python via [Pyodide](https://pyodide.org/) (no install) — `input()` uses a browser prompt
 
 ## Lessons
-1. What is programming / print
+1. What is programming / print (+ Scratch → Python bridge)
 2. Variables & types
 3. Input & output
 4. Operators
@@ -25,4 +25,4 @@ python3 -m http.server 8000
 ```
 
 ## Teacher notes
-Aligned to junior secondary programming concepts (sequence, selection, iteration). Keep S1 pace gentle; extend in S2–S3 toward HKDSE ICT.
+Aligned to junior secondary programming concepts (sequence, selection, iteration / EDB K2 ideas). Students with prior Scratch experience: start at Lesson 1 bridge. Keep S1 pace gentle; extend in S2–S3 toward HKDSE ICT.
